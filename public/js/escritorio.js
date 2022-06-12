@@ -4,7 +4,11 @@ const lblTicket = document.querySelector('small');
 const divAlerta = document.querySelector('.alert');
 const lblPendientes = document.querySelector('#lblPendientes')
 
-const url = 'http://localhost:8080/api/auth';
+
+const url = ( window.location.hostname.includes('localhost'))
+? 'http://localhost:8080/api/auth'
+: 'https://node-cola-virutal.herokuapp.com/api/auth';
+
 let usuario = null;
 
 const validarJWT = async() => {

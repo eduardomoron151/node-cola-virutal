@@ -2,7 +2,9 @@ const lblNuevoTicket = document.querySelector('#lblNuevoTicket');
 const btnCrear = document.querySelector('button');
 const txtCedula = document.querySelector('#txtCedula');
 
-const url = 'http://localhost:8080/api/auth';
+const url = ( window.location.hostname.includes('localhost'))
+? 'http://localhost:8080/api/auth'
+: 'https://node-cola-virutal.herokuapp.com/api/auth';
 
 const validarJWT = async() => {
     const token = localStorage.getItem('token-cola') || '';

@@ -1,7 +1,10 @@
 // referencias HTML
 const formularioRegistro = document.querySelector('form');
 
-const url = 'http://localhost:8080/'
+
+const url = ( window.location.hostname.includes('localhost'))
+? 'http://localhost:8080/'
+: 'https://node-cola-virutal.herokuapp.com/';
 
 // evenlisteners
 formularioRegistro.addEventListener('submit', e => {

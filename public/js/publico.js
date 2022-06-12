@@ -8,8 +8,10 @@ const lblEscritorio3 = document.querySelector('#lblEscritorio3')
 const lblTicket4 = document.querySelector('#lblTicket4')
 const lblEscritorio4 = document.querySelector('#lblEscritorio4')
 
+const url = ( window.location.hostname.includes('localhost'))
+? 'http://localhost:8080/api/auth'
+: 'https://node-cola-virutal.herokuapp.com/api/auth';
 
-const url = 'http://localhost:8080/api/auth';
 let usuario = null;
 
 const validarJWT = async() => {
